@@ -31,7 +31,7 @@ export default function Profile() {
     e.preventDefault();
 
     if (selectedAvatar === undefined) {
-      return alert("Please select an avatar");
+      return setError("Please select an avatar");
     }
 
     try {
