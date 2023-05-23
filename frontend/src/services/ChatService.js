@@ -2,7 +2,7 @@ import axios from "axios";
 import auth from "../config/firebase";
 import { io } from "socket.io-client";
 
-const baseURL = "http://192.168.2.139:4000/api";
+const baseURL = "http://localhost:4000/api";
 
 const getUserToken = async () => {
   const user = auth.currentUser;
@@ -13,7 +13,7 @@ const getUserToken = async () => {
 export const initiateSocketConnection = async () => {
   const token = await getUserToken();
 
-  const socket = io("http://192.168.2.139:4000", {
+  const socket = io("http://localhost:4000", {
     auth: {
       token,
     },
