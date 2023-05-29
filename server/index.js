@@ -26,13 +26,13 @@ app.use("/api/room", chatRoomRoutes);
 app.use("/api/message", chatMessageRoutes);
 app.use("/api/user", userRoutes);
 
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
     credentials: true,
   },
 });
